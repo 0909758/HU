@@ -1,14 +1,15 @@
 <div class="container">
-  <div class="lead">
+  <div class="lead well">
     <div class="media">
       <div class="media-left">
         <a href="#">
-          <img class="media-object" src="https://www.logobee.com/uploads/twitter-icon.jpg">
+          <img class="media-object" src="<%= @question.gravatar %>">
         </a>
       </div>
       <div class="media-body">
-        <h4 class="media-heading">user@email.com asked:</h4>
-        Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.
+        <h4 class="media-heading"><%= @question.email %> asked:</h4>
+        <div><%= time_ago_in_words @question.created_at %> ago</div>
+        <%= @question.body %>
       </div>
     </div>
   </div>
