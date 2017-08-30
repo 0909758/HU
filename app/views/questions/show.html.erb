@@ -24,27 +24,19 @@
 
     <%= render 'home/new_answer_form' %>
 
-    <div class="media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="https://www.logobee.com/uploads/twitter-icon.jpg">
-        </a>
+    <% @question.answers.each do |a| %>
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="<%= a.gravatar %>">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= a.email %> answered:</h4>
+          <%= a.body %>
+        </div>
       </div>
-      <div class="media-body">
-        <h4 class="media-heading">user@email.com answered:</h4>
-        Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.
-      </div>
-    </div>
-    <div class="media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="https://www.logobee.com/uploads/twitter-icon.jpg">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">user@email.com answered:</h4>
-        Veniam veniam sit cupidatat mollit dolor proident. Ea est reprehenderit reprehenderit ullamco. Sunt dolore sint velit incididunt dolore reprehenderit ad sit. Do esse voluptate sit in consequat sint Lorem consectetur laboris elit ipsum. Fugiat excepteur dolor veniam sit velit aliquip laboris consectetur dolor incididunt sint proident.
-      </div>
-    </div>
+    <% end %>
+
   </div>
 </div>
